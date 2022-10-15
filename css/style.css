@@ -20,7 +20,7 @@ h1 {
 .participantes-container {
     display: flex;
     gap: 50px;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .mc-pais {
