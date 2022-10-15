@@ -16,6 +16,16 @@ h1 {
     font-family: 'Rubik', sans-serif;
 }
 
+table, th, td {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+}
+
+input {
+    width: 100px;
+    text-align: center;
+}
 .paises-container,
 .participantes-container {
     display: flex;

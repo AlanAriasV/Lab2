@@ -39,29 +39,29 @@ function data(id_selector, value) {
     function updateButtons(id_selector, arr) {
         var out = "";
         var i;
+        // var id = id_selector == "pais_mc1" ? "table1" : "table2"
         if (value.toLowerCase() == "argentina") {
             for (const part in arr) {
                 nombre = arr[part].NOMBRE
-                out += '<button class="btn-participante" id=' + nombre + '>' + nombre + '</button>';
+                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
             }
         } else if (value.toLowerCase() == "chile") {
             for (const part in arr) {
                 nombre = arr[part];
-                out += '<button class="btn-participante" id=' + nombre + '>' + nombre + '</button>';
+                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
             }
         } else if (value.toLowerCase() == "españa") {
             for (const part in arr) {
                 for (let index = 0; index < arr[part].length; index++) {
                     nombre = arr[part][index];
-                    out += '<button class="btn-participante" id=' + nombre + '>' + nombre + '</button>';
+                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
                 }
             }
         } else {
             for (const part in arr) {
-                // console.log(arr[part]);
                 for (let index = 0; index < arr[part].length; index++) {
                     nombre = arr[part][index].NOMBRE;
-                    out += '<button class="btn-participante" id=' + nombre + '>' + nombre + '</button>';
+                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
                 }
             }
         }
@@ -69,9 +69,29 @@ function data(id_selector, value) {
     }
 }
 
-// this.value.toLowerCase()
+function addMC(id, name) {
+    document.getElementById('table1').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
+    document.getElementById('table2').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
+}
 
+function total(i, id) {
+    table = document.getElementById(id).children[0].children[i];
+    value = 0;
+    for (let index = 1; index < table.childElementCount - 1; index++) {
+        value += parseInt(table.children[index].children[0].value);
+    }
+    table.lastElementChild.innerHTML = value;
+}
 
-// function changeSelector(id, value) {
-//     console.log(value)
-// }
+function win(id) {
+    total1 = parseInt(document.getElementById(id).children[0].children[1].lastElementChild.innerHTML);
+    total2 = parseInt(document.getElementById(id).children[0].children[2].lastElementChild.innerHTML);
+    if (total1 > total2) {
+        ganador = document.getElementById(id).children[0].children[1].firstElementChild.innerHTML;
+    } else if (total2 > total1){
+        ganador = document.getElementById(id).children[0].children[2].firstElementChild.innerHTML;
+    } else {
+        ganador = "EMPATE"
+    }
+    document.getElementById(id == 'table1' ? 'resultado1' : 'resultado2').innerHTML = ganador;
+}
