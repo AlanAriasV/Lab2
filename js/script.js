@@ -95,3 +95,25 @@ function win(id) {
     }
     document.getElementById(id == 'table1' ? 'resultado1' : 'resultado2').innerHTML = ganador;
 }
+
+function finalResults() {
+    resultado1 = document.getElementById('resultado1').innerHTML
+    resultado2 = document.getElementById('resultado2').innerHTML
+
+    if (resultado1 == "EMPATE" ){
+        if (resultado2 == "EMPATE"){
+            document.getElementById('resultadofinal').innerHTML = "EMPATE"
+        } else {
+            document.getElementById('resultadofinal').innerHTML = resultado2
+        }
+    } else {
+        if (resultado2 == "EMPATE") {
+            document.getElementById('resultadofinal').innerHTML = resultado1
+        } else if (resultado1 == resultado2) {
+            document.getElementById('resultadofinal').innerHTML = resultado1
+        } else {
+            document.getElementById('resultadofinal').innerHTML = resultado2
+        }
+    }
+}
+
