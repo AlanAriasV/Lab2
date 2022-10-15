@@ -1,38 +1,38 @@
 {
-    "PARTICIPANTE 1": {
+    "PARTICIPANTE_1": {
         "NOMBRE": "PAPO"
     },
-    "PARTICIPANTE 2": {
+    "PARTICIPANTE_2": {
         "NOMBRE": "MECHA"
     },
-    "PARTICIPANTE 3": {
+    "PARTICIPANTE_3": {
         "NOMBRE": "LARRIX"
     },
-    "PARTICIPANTE 4": {
+    "PARTICIPANTE_4": {
         "NOMBRE": "KLAN"
     },
-    "PARTICIPANTE 5": {
+    "PARTICIPANTE_5": {
         "NOMBRE": "ZAINA"
     },
-    "PARTICIPANTE 6": {
+    "PARTICIPANTE_6": {
         "NOMBRE": "STUART"
     },
-    "PARTICIPANTE 7": {
+    "PARTICIPANTE_7": {
         "NOMBRE": "NACHO"
     },
-    "PARTICIPANTE 8": {
+    "PARTICIPANTE_8": {
         "NOMBRE": "KATRA"
     },
-    "PARTICIPANTE 9": {
+    "PARTICIPANTE_9": {
         "NOMBRE": "MP"
     },
-    "PARTICIPANTE 10": {
+    "PARTICIPANTE_10": {
         "NOMBRE": "WOLF"
     },
-    "PARTICIPANTE 11": {
+    "PARTICIPANTE_11": {
         "NOMBRE": "NAISTA"
     },
-    "PARTICIPANTE 12": {
+    "PARTICIPANTE_12": {
         "NOMBRE": "TATA"
     }
 }

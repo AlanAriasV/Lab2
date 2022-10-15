@@ -16,7 +16,8 @@ h1 {
     font-family: 'Rubik', sans-serif;
 }
 
-.paises-container {
+.paises-container,
+.participantes-container {
     display: flex;
     gap: 50px;
     justify-content: space-around;
@@ -31,4 +32,24 @@ h1 {
 select{
     font-size: 1.2rem;
     border-radius: 50px;
+}
+
+.partipantes-pais {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.partipantes-pais span {
+    color: lightblue;
+    text-shadow: 1px 1px 3px black;
+}
+
+.btn-list-participantes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.btn-participante {
+    width: 70px;
+    height: 40px;
 }
