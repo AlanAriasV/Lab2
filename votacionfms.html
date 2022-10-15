@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>FMS</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/logoFMS.png" alt="logoFMS">
+        <h1>TABLA DE PUNTUACIONES</h1>
+    </header>
+    <main>
+        <div class="paises-container">
+            <div class="mc-pais">
+                <div class="identificador">
+                    MC1
+                </div>
+                <div class="selector-pais-container">
+                    <label for="pais_mc1">Elige un país</label>
+
+                    <select name="pais_mc1" id="pais_mc1">
+                        <option value="argentina">Argentina</option>
+                        <option value="chile">Chile</option>
+                        <option value="espana">España</option>
+                        <option value="mexico">Mexico</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mc-pais">
+                <div class="identificador">
+                    MC2
+                </div>
+                <div class="selector-pais-container">
+                    <label for="pais_mc2">Elige un país</label>
+
+                    <select name="pais_mc2" id="pais_mc2">
+                        <option value="argentina">Argentina</option>
+                        <option value="chile">Chile</option>
+                        <option value="espana">España</option>
+                        <option value="mexico">Mexico</option>
+                    </select>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="participantes-container">
+            <div id="partipantes-pais">
+                <span id="pais1">Argentina</span>
+            </div>
+            <div id="partipantes-pais">
+                <span id="pais2">Argentina</span>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

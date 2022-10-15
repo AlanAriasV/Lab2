@@ -1,11 +1,11 @@
 body {
     margin: 0px;
-    color: white;
 }
 header {
     display: flex;
     align-items: center;
     background-color: black;
+    color: white;
 }
 
 h1 {
@@ -14,4 +14,21 @@ h1 {
     position: absolute;
     text-align: center;
     font-family: 'Rubik', sans-serif;
+}
+
+.paises-container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+}
+
+.mc-pais {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+select{
+    font-size: 1.2rem;
+    border-radius: 50px;
 }
