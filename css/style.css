@@ -1,11 +1,18 @@
 body {
     margin: 0px;
+    background-color: #161616;
+    color: white;
 }
+
 header {
     display: flex;
     align-items: center;
     background-color: black;
     color: white;
+}
+
+main {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1 {
@@ -26,6 +33,7 @@ input {
     width: 100px;
     text-align: center;
 }
+
 .paises-container,
 .participantes-container {
     display: flex;
@@ -49,17 +57,41 @@ select{
     text-align: center;
 }
 .partipantes-pais span {
-    color: lightblue;
+    color: gold;
+    font-size: 1.5rem;
     text-shadow: 1px 1px 3px black;
 }
 
 .btn-list-participantes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding-top: 20px;
+    padding-bottom: 20px;
     gap: 10px;
 }
 
 .btn-participante {
-    width: 70px;
-    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    width: 150px;
+    height: 50px;
+    text-shadow: 1px 1px 2px white;
+    box-shadow: 0px 0px 5px 1px black;
+    font-family: 'Rubik', sans-serif;
+    transition: all .1s ease-in-out; 
+}
+
+.btn-participante:hover {
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+}
+
+.tabla-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    visibility: hidden;
 }

@@ -19,10 +19,12 @@ class PaisSelector {
     }
 }
 
-var participantes1 = new PaisSelector("pais_mc1", "pais1")
-var participantes2 = new PaisSelector("pais_mc2", "pais2")
-participantes1.detectaCambios()
-participantes2.detectaCambios()
+var participantes1 = new PaisSelector("pais_mc1", "pais1");
+var participantes2 = new PaisSelector("pais_mc2", "pais2");
+participantes1.detectaCambios();
+participantes2.detectaCambios();
+data("pais_mc1", "Argentina");
+data("pais_mc2", "Argentina");
 
 function data(id_selector, value) {
     var xmlhttp = new XMLHttpRequest();
@@ -72,6 +74,7 @@ function data(id_selector, value) {
 function addMC(id, name) {
     document.getElementById('table1').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
     document.getElementById('table2').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
+    document.getElementsByClassName('tabla-container')[0].style.visibility = 'visible';
 }
 
 function total(i, id) {
@@ -117,3 +120,12 @@ function finalResults() {
     }
 }
 
+//Habilita el boton de resultado final solo si hay 2 resultados
+resultados = [document.getElementById('resultado1'), document.getElementById('resultado2')]
+function habilitaBoton() {
+    if (resultados[0].innerHTML != "" && resultados[1].innerHTML != "" ) {
+        document.getElementById('btn-calc-final').disabled = false;
+    }
+}
+
+//Muestra la tabla

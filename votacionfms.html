@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Rubik:ital,wght@1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <title>FMS</title>
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="tabla-container">
             <table id="table1">
                 <tr>
                     <th colspan="2">NOMBRE FREESTYLER</th>
@@ -77,7 +77,7 @@
                     <th>TOTAL</th>
                 </tr>
                 <tr>
-                    <td colspan="2">GAZIR</td>
+                    <td colspan="2"></td>
                     <td>
                         <input type="number" min="0" max="4" value="0" onchange="total(1, 'table1')">
                     </td>
@@ -110,7 +110,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">GAZIR</td>
+                    <td colspan="2"></td>
                     <td>
                         <input type="number" min="0" max="4" value="0" onchange="total(2, 'table1')">
                     </td>
@@ -144,7 +144,7 @@
                 </tr>
 
             </table>
-            <div><button onclick="win('table1')">Calcular</button></div>
+            <div><button id="btn-calc-result1" onclick="win('table1'); habilitaBoton()">Calcular</button></div>
             <div>
                 Resultado: <br>
                 <span id="resultado1"></span>
@@ -159,7 +159,7 @@
                     <th>TOTAL</th>
                 </tr>
                 <tr>
-                    <td colspan="2">GAZIR</td>
+                    <td colspan="2"></td>
                     <td>
                         <input type="number" min="0" max="4" value="0" onchange="total(1, 'table2')">
                     </td>
@@ -186,7 +186,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">GAZIR</td>
+                    <td colspan="2"></td>
                     <td>
                         <input type="number" min="0" max="4" value="0" onchange="total(2, 'table2')">
                     </td>
@@ -213,15 +213,15 @@
                     </td>
                 </tr>
             </table>
-            <div><button onclick="win('table2')">Calcular</button></div>
+            <div><button id="btn-calc-result2" onclick="win('table2'); habilitaBoton()">Calcular</button></div>
             <div>
                 Resultado: <br>
                 <span id="resultado2"></span>
             </div>
         </div>
 
-        <div>
-            <button onClick="finalResults()">Calcular final</button>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <button id="btn-calc-final" onClick="finalResults()" disabled>Calcular final</button>
             <span id="resultadofinal"></span>
         </div>
     </main>
