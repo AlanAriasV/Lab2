@@ -45,25 +45,25 @@ function data(id_selector, value) {
         if (value.toLowerCase() == "argentina") {
             for (const part in arr) {
                 nombre = arr[part].NOMBRE
-                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
+                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + encodeURIComponent(nombre) + '\')>' + nombre + '</button>';
             }
         } else if (value.toLowerCase() == "chile") {
             for (const part in arr) {
                 nombre = arr[part];
-                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
+                out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + encodeURIComponent(nombre) + '\')>' + nombre + '</button>';
             }
         } else if (value.toLowerCase() == "españa") {
             for (const part in arr) {
                 for (let index = 0; index < arr[part].length; index++) {
                     nombre = arr[part][index];
-                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
+                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + encodeURIComponent(nombre) + '\')>' + nombre + '</button>';
                 }
             }
         } else {
             for (const part in arr) {
                 for (let index = 0; index < arr[part].length; index++) {
                     nombre = arr[part][index].NOMBRE;
-                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + nombre + '\')>' + nombre + '</button>';
+                    out += '<button class="btn-participante" id=' + nombre + ' onClick=addMC(\'' + id_selector + '\',\'' + encodeURIComponent(nombre) + '\')>' + nombre + '</button>';
                 }
             }
         }
@@ -72,8 +72,8 @@ function data(id_selector, value) {
 }
 
 function addMC(id, name) {
-    document.getElementById('table1').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
-    document.getElementById('table2').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = name;
+    document.getElementById('table1').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = decodeURIComponent(name);
+    document.getElementById('table2').children[0].children[id == "pais_mc1" ? 1 : 2].children[0].innerHTML = decodeURIComponent(name);
     document.getElementsByClassName('tabla-container')[0].style.visibility = 'visible';
 }
 
