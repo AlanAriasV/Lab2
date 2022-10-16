@@ -77,13 +77,16 @@ function addMC(id, name) {
     document.getElementsByClassName('tabla-container')[0].style.visibility = 'visible';
 }
 
-function total(i, id) {
-    table = document.getElementById(id).children[0].children[i];
-    value = 0;
-    for (let index = 1; index < table.childElementCount - 1; index++) {
-        value += parseInt(table.children[index].children[0].value);
+function total(i, id, input) {
+    if (valida(input) == true) {
+        table = document.getElementById(id).children[0].children[i];
+        value = 0;
+        for (let index = 1; index < table.childElementCount - 1; index++) {
+            value += parseInt(table.children[index].children[0].value);
+        }
+        table.lastElementChild.innerHTML = value;
     }
-    table.lastElementChild.innerHTML = value;
+    
 }
 
 function win(id) {
@@ -124,8 +127,24 @@ function finalResults() {
 resultados = [document.getElementById('resultado1'), document.getElementById('resultado2')]
 function habilitaBoton() {
     if (resultados[0].innerHTML != "" && resultados[1].innerHTML != "" ) {
-        document.getElementById('btn-calc-final').disabled = false;
+        document.getElementById('btn-calc-final').style.visibility = 'visible';
     }
 }
 
-//Muestra la tabla
+//Verifica que no salga de rango
+function valida(input) {
+    prev_state = parseInt(input.oldValue);
+    value = parseInt(input.value);
+    min = parseInt(input.min);
+    max = parseInt(input.max);
+    if (value < min) {
+        alert("Solo se permite "+min+" como mínima puntuación")
+        input.value = prev_state;
+        return false
+    } else if (value > max) {
+        alert("Solo se permite "+max+" como máxima puntuación")
+        input.value = prev_state;
+        return false
+    }
+    return true
+}

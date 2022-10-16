@@ -2,6 +2,7 @@ body {
     margin: 0px;
     background-color: #161616;
     color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
 header {
@@ -11,35 +12,43 @@ header {
     color: white;
 }
 
-main {
-    font-family: 'Rubik', sans-serif;
-}
-
 h1 {
     width: 100%;
     font-size: 3rem;
     position: absolute;
     text-align: center;
-    font-family: 'Rubik', sans-serif;
 }
 
-table, th, td {
+table {
+    table-layout: fixed
+}
+
+table,
+th,
+td {
     border: 2px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    border-collapse:separate;
-    border:solid black 1px;
-    border-radius:6px;
+    border-collapse: separate;
+    border: solid black 1px;
+    border-radius: 6px;
 }
 
 
-td, th {
-    border-left:solid black 2px;
-    border-top:solid black 2px;
+td,
+th {
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 td {
     color: goldenrod;
-    font-family: 'Rubik', sans-serif;
+    width: 80px;
+    height: 80px;
 }
 
 input {
@@ -50,10 +59,36 @@ input {
     text-align: center;
     color: gold;
     font-family: 'Rubik', sans-serif;
+    font-size: 1.3rem;
 }
 
 input:focus {
     outline: goldenrod solid 2px !important;
+}
+
+.range-type-1,
+.range-type-2 {
+    position: relative;
+}
+
+.range-type-1:before,
+.range-type-2:before {
+    white-space: nowrap;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    position: absolute;
+    color: aliceblue;
+    font-size: 0.6rem;
+}
+
+.range-type-1:before {
+    content: "0-1-2-3-4";
+}
+
+.range-type-2:before {
+    content: "0-1-2";
 }
 
 .paises-container,
@@ -69,7 +104,7 @@ input:focus {
     margin: 20px;
 }
 
-select{
+select {
     font-size: 1.2rem;
     border-radius: 50px;
 }
@@ -78,6 +113,7 @@ select{
     font-size: 1.2rem;
     text-align: center;
 }
+
 .partipantes-pais span {
     color: gold;
     font-size: 1.5rem;
@@ -102,88 +138,31 @@ select{
     text-shadow: 1px 1px 2px white;
     box-shadow: 0px 0px 5px 1px black;
     font-family: 'Rubik', sans-serif;
-    transition: all .1s ease-in-out; 
+    transition: all .1s ease-in-out;
 }
 
 .btn-participante:focus {
     background-color: goldenrod;
     color: #161616;
-  }
+}
 
 .btn-participante:hover {
-    transform: scale(1.1,1.1);
-    -webkit-transform: scale(1.1,1.1);
-    -moz-transform: scale(1.1,1.1);
+    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
 }
 
 .tabla-container {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     align-items: center;
     visibility: hidden;
 }
 
 /*MUCHO CUIDAO*/
 
-input[type="number"] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-  
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
--webkit-appearance: none;
-}
-
-
-.number-input {
-    display: inline-flex;
-    align-items: center;
-}
-
-.number-input,
-.number-input * {
-}
-  
-.number-input button {
-    outline:none;
     -webkit-appearance: none;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    width: 1rem;
-    height: 3rem;
-    cursor: pointer;
-    position: relative;
-  }
-  
-.number-input button:after {
-    display: inline-block;
-    position: absolute;
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 900;
-    content: '\f077';
-    color: white;
-    transform: translate(-50%, -50%) rotate(180deg);
-}
-.number-input button.plus:after {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.minus {
-    margin-left: 5px;
-}
-
-.plus {
-    margin-right: 5px;
-}
-  
-.number-input input[type=number] {
-    padding: .5rem;
-    border-width: 0 2px;
-    font-size: 1.5rem;
-    height: 3rem;
-    text-align: center;
+    margin: 0;
 }
