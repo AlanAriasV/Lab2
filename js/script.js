@@ -111,7 +111,7 @@ function finalResults() {
 
     if (resultado1 == "EMPATE" ){
         if (resultado2 == "EMPATE"){
-            document.getElementById('resultadofinal').innerHTML = "EMPATE"
+            document.getElementById('resultadofinal').innerHTML = "¡ RÉPLICA !"
         } else {
             document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
         }
