@@ -109,19 +109,21 @@ function finalResults() {
     resultado1 = document.getElementById('resultado1').innerHTML
     resultado2 = document.getElementById('resultado2').innerHTML
 
-    if (resultado1 == "EMPATE" ){
-        if (resultado2 == "EMPATE"){
-            document.getElementById('resultadofinal').innerHTML = "¡ RÉPLICA !"
-        } else {
-            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
-        }
+    if (resultado1 == resultado2 && resultado1 != "EMPATE") {
+        document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
     } else {
-        if (resultado2 == "EMPATE") {
-            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
-        } else if (resultado1 == resultado2) {
-            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
+        if (resultado1 == "EMPATE") {
+            if (resultado2 != "EMPATE") {
+                document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
+            } else {
+                document.getElementById('resultadofinal').innerHTML = "¡ RÉPLICA !"
+            }
         } else {
-            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
+            if (resultado2 == "EMPATE") {
+                document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
+            } else {
+                document.getElementById('resultadofinal').innerHTML = "¡ RÉPLICA !"
+            }
         }
     }
     document.getElementById('resultadofinal').className = ""
