@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Rubik:ital,wght@1,700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <title>FMS</title>
 </head>
@@ -69,7 +70,7 @@
         <div class="tabla-container">
             <table id="table1">
                 <tr>
-                    <th colspan="2">NOMBRE FREESTYLER</th>
+                    <th colspan="2">FREESTYLER</th>
                     <th colspan="6">PATRONES</th>
                     <th>ESCENA</th>
                     <th>FLOW</th>
@@ -78,8 +79,10 @@
                 </tr>
                 <tr>
                     <td colspan="2"></td>
-                    <td>
-                        <input type="number" min="0" max="4" value="0" onchange="total(1, 'table1')">
+                    <td class="number-input">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                        <input class="quantity" type="number" min="0" max="4" value="0" onchange="total(1, 'table1')" disabled>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                     </td>
                     <td>
                         <input type="number" min="0" max="4" value="0" onchange="total(1, 'table1')">
@@ -151,7 +154,7 @@
             </div>
             <table id="table2">
                 <tr>
-                    <th colspan="2">NOMBRE FREESTYLER</th>
+                    <th colspan="2">FREESTYLER</th>
                     <th colspan="4">PATRONES</th>
                     <th>ESCENA</th>
                     <th>FLOW</th>

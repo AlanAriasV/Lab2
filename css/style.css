@@ -12,7 +12,7 @@ header {
 }
 
 main {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 h1 {
@@ -24,14 +24,36 @@ h1 {
 }
 
 table, th, td {
-    border-collapse: collapse;
-    border: 2px solid black;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+}
+
+
+td, th {
+    border-left:solid black 2px;
+    border-top:solid black 2px;
+}
+
+td {
+    color: goldenrod;
+    font-family: 'Rubik', sans-serif;
 }
 
 input {
-    width: 100px;
+    background-color: transparent;
+    border-color: transparent;
+    width: 50px;
+    height: 50px;
     text-align: center;
+    color: gold;
+    font-family: 'Rubik', sans-serif;
+}
+
+input:focus {
+    outline: goldenrod solid 2px !important;
 }
 
 .paises-container,
@@ -83,6 +105,11 @@ select{
     transition: all .1s ease-in-out; 
 }
 
+.btn-participante:focus {
+    background-color: goldenrod;
+    color: #161616;
+  }
+
 .btn-participante:hover {
     transform: scale(1.1,1.1);
     -webkit-transform: scale(1.1,1.1);
@@ -94,4 +121,69 @@ select{
     flex-direction: column; 
     align-items: center;
     visibility: hidden;
+}
+
+/*MUCHO CUIDAO*/
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+  
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+}
+
+
+.number-input {
+    display: inline-flex;
+    align-items: center;
+}
+
+.number-input,
+.number-input * {
+}
+  
+.number-input button {
+    outline:none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 3rem;
+    cursor: pointer;
+    position: relative;
+  }
+  
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content: '\f077';
+    color: white;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.minus {
+    margin-left: 5px;
+}
+
+.plus {
+    margin-right: 5px;
+}
+  
+.number-input input[type=number] {
+    padding: .5rem;
+    border-width: 0 2px;
+    font-size: 1.5rem;
+    height: 3rem;
+    text-align: center;
 }
