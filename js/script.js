@@ -99,7 +99,10 @@ function win(id) {
     } else {
         ganador = "EMPATE"
     }
-    document.getElementById(id == 'table1' ? 'resultado1' : 'resultado2').innerHTML = ganador;
+
+    results_doc = document.getElementById(id == 'table1' ? 'resultado1' : 'resultado2');
+    results_doc.innerHTML = ganador;
+    results_doc.parentNode.className = 'resultado-show';
 }
 
 function finalResults() {
@@ -110,24 +113,25 @@ function finalResults() {
         if (resultado2 == "EMPATE"){
             document.getElementById('resultadofinal').innerHTML = "EMPATE"
         } else {
-            document.getElementById('resultadofinal').innerHTML = resultado2
+            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
         }
     } else {
         if (resultado2 == "EMPATE") {
-            document.getElementById('resultadofinal').innerHTML = resultado1
+            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
         } else if (resultado1 == resultado2) {
-            document.getElementById('resultadofinal').innerHTML = resultado1
+            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado1+" ES EL GANADOR!"
         } else {
-            document.getElementById('resultadofinal').innerHTML = resultado2
+            document.getElementById('resultadofinal').innerHTML = '¡ '+resultado2+" ES EL GANADOR!"
         }
     }
+    document.getElementById('resultadofinal').className = ""
 }
 
 //Habilita el boton de resultado final solo si hay 2 resultados
 resultados = [document.getElementById('resultado1'), document.getElementById('resultado2')]
 function habilitaBoton() {
     if (resultados[0].innerHTML != "" && resultados[1].innerHTML != "" ) {
-        document.getElementById('btn-calc-final').style.visibility = 'visible';
+        document.getElementById('btn-calc-final').parentNode.className = 'calc-final-container';
     }
 }
 
